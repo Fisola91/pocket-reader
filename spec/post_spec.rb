@@ -5,7 +5,7 @@ RSpec.describe Post do
     expect(subject.mark_post_as_read).to be true
   end
 
-  it "returns true for a read post" do
-    expect(subject.post_read?).to be true
-  end
+  # it "returns true for a read post" do
+  #   expect(subject.post_read?).to be true
+  # end
 end
