@@ -1,4 +1,5 @@
 class Post
+  attr_reader :title, :author
   def initialize(attribute = {})
     @author = attribute[:author]
     @title = attribute[:title]

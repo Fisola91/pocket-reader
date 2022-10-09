@@ -8,6 +8,16 @@ class Repository
     load_csv if File.exist?(@csv_file)
   end
 
+  def all
+    @posts
+  end
+
+  def find(index)
+    @posts[index]
+  end
+
+
+
 
   private
 
