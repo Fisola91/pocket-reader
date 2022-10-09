@@ -1,5 +1,8 @@
 class Post
-  def initialize
+  def initialize(attribute = {})
+    @author = attribute[:author]
+    @title = attribute[:title]
+    @content = attribute[:content]
     @post_read_completed = false
   end
 
