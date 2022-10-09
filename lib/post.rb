@@ -6,4 +6,8 @@ class Post
   def mark_post_as_read
     @post_read_completed = true
   end
+
+  def post_read?
+    @post_read_completed
+  end
 end
