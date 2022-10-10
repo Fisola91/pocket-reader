@@ -2,7 +2,6 @@ class View
 
   def list_all_posts(posts)
     posts.each_with_index do |post, index|
-      p post
       status = post.post_read? ? "[X]" : "[ ]"
       puts "#{index + 1}. #{status} - #{post.title} (#{post.author})"
     end
@@ -11,6 +10,16 @@ class View
       puts "#{stuff.capitalize}?"
       print "> "
       gets.chomp
+    end
+
+    def ask_for_index
+      puts "Index?"
+      print "> "
+      gets.chomp.to_i - 1
+    end
+
+    def display_content(post)
+      puts post
     end
   end
 

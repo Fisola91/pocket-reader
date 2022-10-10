@@ -26,9 +26,6 @@ class Repository
     save
   end
 
-
-
-
   private
 
   def load_csv

@@ -27,6 +27,12 @@ class Controller
     @repository.add_post(post)
     list_posts
   end
+  def show
+    list_posts
+    index = @view.ask_for_index
+    post = @repository.find(index)
+    @view.display_content(post)
+  end
 
   def mark_as_read
     list
@@ -34,20 +40,10 @@ class Controller
     @repo.mark_as_read(index)
     list
   end
-  # [post.path, post.author, post.title, post.content, post.post_read?]
-  # def save_post
-  #   # 1. Get user input
-  #   attribute = @view.save_post_for_later
 
-  #   # 2. Create instance of the post
-  #   post = Post.new(attribute)
-
-  #   #3. add to the repo
-  #   @repository.add_post(post)
-  # end
-end
-private
-def list_posts
-  posts = @repository.all
-  @view.list_all_posts(posts)
+  private
+  def list_posts
+    posts = @repository.all
+    @view.list_all_posts(posts)
+  end
 end

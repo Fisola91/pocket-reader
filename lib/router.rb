@@ -22,6 +22,8 @@ class Router
       choice = gets.chomp.to_i
       case choice
       when 1 then @controller.index
+      when 2 then @controller.create
+      when 3 then @controller.show
       else
         puts "Try again"
       end

@@ -12,6 +12,10 @@ class Post
     @post_read
   end
 
+  def to_s
+    "#{title} (#{author})\n\n#{content}"
+  end
+
   def mark_as_read!
     @post_read = true
   end
