@@ -1,6 +1,7 @@
 class Router
   def initialize(controller)
     @controller = controller
+    @running = true
   end
 
   def run
@@ -8,8 +9,18 @@ class Router
     puts "welcome to your DEV Pocket Reader"
     puts "----------------------------\n\n"
 
-    loop do
-      puts "----------------------------"
+    while @running
+      print_menu
+      action = gets.chomp.to_i
+      route(action)
+    end
+    puts "bye bye"
+  end
+
+  private
+
+  def print_menu
+    puts "----------------------------"
       puts "What do you want to do next?"
       puts "----------------------------"
 
@@ -19,17 +30,18 @@ class Router
       puts "4. Mark post as read"
       puts "5. Delete post"
       puts "6. Exit"
+  end
 
-      choice = gets.chomp.to_i
-      case choice
-      when 1 then @controller.index
-      when 2 then @controller.create
-      when 3 then @controller.show
-      when 4 then @controller.mark_as_read
-      when 5 then @controller.destroy
-      else
-        puts "Try again"
-      end
+  def route(action)
+    case action
+    when 1 then @controller.index
+    when 2 then @controller.create
+    when 3 then @controller.show
+    when 4 then @controller.mark_as_read
+    when 5 then @controller.destroy
+    when 6 then @running = false
+    else
+      puts "Try again"
     end
   end
 end

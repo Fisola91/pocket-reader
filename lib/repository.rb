@@ -28,6 +28,7 @@ class Repository
 
   def delete(index)
     @posts.delete(index)
+    save
   end
 
   private
