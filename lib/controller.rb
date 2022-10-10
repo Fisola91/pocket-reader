@@ -35,10 +35,10 @@ class Controller
   end
 
   def mark_as_read
-    list
-    index = @view.ask_user_for_index
-    @repo.mark_as_read(index)
-    list
+    list_posts
+    index = @view.ask_for_index
+    @repository.mark_as_read(index)
+    list_posts
   end
 
   private

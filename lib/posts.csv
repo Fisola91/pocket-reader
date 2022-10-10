@@ -1,5 +1,5 @@
 magnus_skog/visual-studio-code-plugins-for-ruby-rails-4bid,Magnus Skog,Visual Studio Code plugins for Ruby and Rails,This post explains easy steps tp integrate Visual Studio Code plugins to Ruby on Rails,true
-molly_struve/level-up-your-ruby-skillz-working-with-arrays-4bid,Molly Struve,Level Up Your Ruby Skillz: Working With Arrays,Understanding arrays,false
+molly_struve/level-up-your-ruby-skillz-working-with-arrays-4bid,Molly Struve,Level Up Your Ruby Skillz: Working With Arrays,Understanding arrays,true
 molly_struve/level-up-your-ruby-skillz-working-with-hashes-4bid,Molly Struve (she/her),Level Up Your Ruby Skillz: Working With Hashes,"Last week I tackled Ruby arrays and shared some of the methods I find the most useful for working with them. This week I want to talk about HASHES! Before I dive head first into my favorite methods, I want to give a quick summary of what a hash is in Ruby and how it works. The definition of a Hash straight from the docs themselves:
 
 A Hash is a dictionary-like collection(If you are a Java person, think maps) of unique keys and their values. Also called associative arrays(honestly, I have never heard this before but 🤷), they are similar to Arrays, but where an Array uses integers as its index, a Hash allows you to use any object type.

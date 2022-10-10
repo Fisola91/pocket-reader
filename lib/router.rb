@@ -24,6 +24,7 @@ class Router
       when 1 then @controller.index
       when 2 then @controller.create
       when 3 then @controller.show
+      when 4 then @controller.mark_as_read
       else
         puts "Try again"
       end
