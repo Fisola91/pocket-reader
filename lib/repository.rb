@@ -12,8 +12,18 @@ class Repository
     @posts
   end
 
+  def add_post(post)
+    @posts << post
+    save
+  end
+
   def find(index)
     @posts[index]
+  end
+
+  def mark_as_read
+    @posts[index].mark_as_read!
+    save
   end
 
 
@@ -22,8 +32,22 @@ class Repository
   private
 
   def load_csv
-    CSV.foreach(@csv_file, headers: :first_row, header_converters: :symbol) do |row|
-      @posts << Post.new(row)
+    CSV.foreach(@csv_file) do |row|
+      @posts << Post.new(
+        path: row[0],
+        author: row[1],
+        title: row[2],
+        content: row[3],
+        post_read: row[4]
+      )
+    end
+  end
+
+  def save
+    CSV.open(@csv_file, "wb") do |csv|
+      @posts.each do |post|
+        csv << [post.path, post.author, post.title, post.content, post.post_read?]
+      end
     end
   end
 end

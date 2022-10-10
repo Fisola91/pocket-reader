@@ -1,17 +1,19 @@
 class Post
-  attr_reader :title, :author
+  attr_reader :title, :author, :path, :content
   def initialize(attribute = {})
+    @path = attribute[:path]
     @author = attribute[:author]
     @title = attribute[:title]
     @content = attribute[:content]
-    @post_read_completed = false
-  end
-
-  def mark_post_as_read
-    @post_read_completed = true
+    @post_read = attribute[:post_read] == "true"
   end
 
   def post_read?
-    @post_read_completed
+    @post_read
   end
+
+  def mark_as_read!
+    @post_read = true
+  end
+
 end
