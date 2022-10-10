@@ -41,6 +41,14 @@ class Controller
     list_posts
   end
 
+  def destroy
+    list_posts
+    index = @view.ask_for_index
+    post = @repository.find(index)
+    @repository.delete(post)
+    list_posts
+  end
+
   private
   def list_posts
     posts = @repository.all

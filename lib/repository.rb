@@ -26,6 +26,10 @@ class Repository
     save
   end
 
+  def delete(index)
+    @posts.delete(index)
+  end
+
   private
 
   def load_csv

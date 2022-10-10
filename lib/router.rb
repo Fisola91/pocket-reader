@@ -17,7 +17,8 @@ class Router
       puts "2. Save post for later"
       puts "3. Read post"
       puts "4. Mark post as read"
-      puts "5. Exit"
+      puts "5. Delete post"
+      puts "6. Exit"
 
       choice = gets.chomp.to_i
       case choice
@@ -25,6 +26,7 @@ class Router
       when 2 then @controller.create
       when 3 then @controller.show
       when 4 then @controller.mark_as_read
+      when 5 then @controller.destroy
       else
         puts "Try again"
       end
