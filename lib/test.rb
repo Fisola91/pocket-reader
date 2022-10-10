@@ -8,6 +8,5 @@ repo = Repository.new(File.join(__dir__, 'posts.csv'))
 view = View.new
 controller = Controller.new(repo)
 
-
 router = Router.new(controller)
 router.run
